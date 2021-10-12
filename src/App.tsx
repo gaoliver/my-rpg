@@ -95,10 +95,9 @@ function App() {
 
       <p id="action">{action}</p>
 
-      <form className="form" onSubmit={talk} action="#">
+      <form className="form" onSubmit={talk} action="#" autoComplete="on">
         <input
           type="text"
-          name=""
           id="text"
           placeholder="Call an action or say something..."
           value={textInput}
