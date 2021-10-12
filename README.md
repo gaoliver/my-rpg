@@ -17,7 +17,7 @@ In the project, you can use de action input to do some changes, like:
 
 > walk<span style="color: red">\*</span>: You can also pass a parameter to define how is the caracter walking (fast, alone, quickly...)
 
-> <span style="color: gold">_property_name_</span><span style="color: red">\*</span>: name, type or weapon.
+> <span style="color: gold">_property_name_</span><span style="color: red">\*</span>: name, type or weapon. The _type_ property accepts any kind you want, but it's ready to receive well human, orc or elf for now.
 
 <br>
 
