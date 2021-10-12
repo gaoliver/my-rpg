@@ -59,8 +59,16 @@ function App() {
     }
 
     if (textInput.includes("walk")) {
-      var walk = textInput.substr(5);
+      let walk = textInput.substr(5);
       return setAction(fulano.walk(walk));
+    }
+
+    if (textInput.includes("fight")) {
+      return setAction(fulano.fight());
+    }
+
+    if (textInput.includes("presentation")) {
+      return setAction(fulano.presentation());
     }
 
     setAction(fulano.say(textInput));
