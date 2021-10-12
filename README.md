@@ -6,7 +6,7 @@ In the project, you can use de action input to do some changes, like:
 
 - **Change properties**:
   Just type "change
-  <span style="color: gold">_property_name_</span> to <span style="color: gold">_new_value_</span>", and send to see the change happen.
+  <span style="color: gold">_property_name_</span><span style="color: red">\*</span> to <span style="color: gold">_new_value_</span>", and send to see the change happen.
 
 - **Actions**:
   You can just type an action to see it happening. For now, you can just do actions like: walk<span style="color: red">\*</span>, fight, presentation.
@@ -16,6 +16,8 @@ In the project, you can use de action input to do some changes, like:
 <br>
 
 > walk<span style="color: red">\*</span>: You can also pass a parameter to define how is the caracter walking (fast, alone, quickly...)
+
+> <span style="color: gold">_property_name_</span><span style="color: red">\*</span>: name, type or weapon.
 
 <br>
 
