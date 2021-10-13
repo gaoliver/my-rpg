@@ -60,15 +60,18 @@ function App() {
 
     if (textInput.includes("walk")) {
       let walk = textInput.substr(5);
-      return setAction(fulano.walk(walk));
+      setAction(fulano.walk(walk));
+      return setTextInput("");
     }
 
     if (textInput.includes("fight")) {
-      return setAction(fulano.fight());
+      setAction(fulano.fight());
+      return setTextInput("");
     }
 
     if (textInput.includes("presentation")) {
-      return setAction(fulano.presentation());
+      setAction(fulano.presentation());
+      return setTextInput("");
     }
 
     setAction(fulano.say(textInput));
