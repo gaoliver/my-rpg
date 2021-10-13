@@ -46,17 +46,38 @@ function App() {
 
   const talk = () => {
     const fullCommand = textInput.split(" ");
+    const fullCommandLowerCase = textInput.toLocaleLowerCase().split(" ");
     const command = fullCommand[0];
 
-    if (textInput.toLocaleLowerCase().includes("change")) {
-      var changeIndex = textInput.indexOf("change");
-      var toIndex = textInput.indexOf("to", changeIndex);
-      var param = textInput.substring(changeIndex + 7, toIndex - 1);
-      var value = textInput.substring(toIndex + 3);
-      if (param in legolas) {
-        return change(param, value);
+    if (fullCommandLowerCase.includes("change")) {
+      var changeIndex = fullCommandLowerCase.indexOf("change");
+      let param = fullCommandLowerCase[changeIndex + 1];
+      var toIndex = fullCommandLowerCase.indexOf("to", changeIndex);
+      var value = fullCommand[toIndex + 1];
+
+      if (
+        fullCommandLowerCase.includes("my") ||
+        fullCommandLowerCase.includes("his") ||
+        fullCommandLowerCase.includes("her")
+      ) {
+        let pronoum = fullCommandLowerCase.indexOf("my", changeIndex);
+
+        if (pronoum === -1) {
+          pronoum = fullCommandLowerCase.indexOf("his", changeIndex);
+        }
+        if (pronoum === -1) {
+          pronoum = fullCommandLowerCase.indexOf("her", changeIndex);
+        }
+
+        param = fullCommandLowerCase[pronoum + 1];
+      }
+
+      if (value === undefined || value === "") {
+        return alert(`No value found for ${param}.`);
       } else if (param === "change ") {
         return alert(`Define a valid value and parameter to change.`);
+      } else if (param in legolas) {
+        return change(param, value);
       } else {
         return alert(`${param} is not a property of character.`);
       }
