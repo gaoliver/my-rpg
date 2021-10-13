@@ -15,7 +15,7 @@ export default class Character {
   }
 
   presentation() {
-    return `Hello, my name is ${this.name} and I am ${this.type}. Beware my ${this.weapon}!`;
+    return `${this.name}: "Hello, my name is ${this.name} and I am ${this.type}. Beware my ${this.weapon}!"`;
   }
 
   walk(condition: string | undefined) {

@@ -47,10 +47,11 @@ function App() {
   const talk = () => {
     let command = textInput.split(" ")[0];
 
-    if (textInput.includes("change")) {
-      var param2 = textInput.indexOf("to");
-      var param = textInput.substring(7, param2 - 1);
-      var value = textInput.substring(param2 + 3);
+    if (textInput.toLocaleLowerCase().includes("change")) {
+      var changeIndex = textInput.indexOf("change")
+      var toIndex = textInput.indexOf("to", changeIndex);
+      var param = textInput.substring(changeIndex + 7, toIndex - 1);
+      var value = textInput.substring(toIndex + 3);
       if (param in legolas) {
         return change(param, value);
       } else {
