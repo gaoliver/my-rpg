@@ -45,9 +45,8 @@ function App() {
   };
 
   const talk = () => {
-    let command = textInput.split(" ")[0];
-
-    console.log(command);
+    const fullCommand = textInput.split(" ");
+    const command = fullCommand[0];
 
     if (textInput.toLocaleLowerCase().includes("change")) {
       var changeIndex = textInput.indexOf("change");
@@ -63,19 +62,12 @@ function App() {
       }
     }
 
-    if (textInput.includes("walk")) {
-      let walk = textInput.substr(5);
-      setAction(fulano.walk(walk));
-      return setTextInput("");
-    }
-
-    if (textInput.includes("fight")) {
-      setAction(fulano.fight());
-      return setTextInput("");
-    }
-
-    if (textInput.includes("presentation")) {
-      setAction(fulano.presentation());
+    if (
+      command === "walk" ||
+      command === "fight" ||
+      command === "presentation"
+    ) {
+      setAction(fulano[command](fullCommand[1] ? fullCommand[1] : ""));
       return setTextInput("");
     }
 
