@@ -47,13 +47,17 @@ function App() {
   const talk = () => {
     let command = textInput.split(" ")[0];
 
+    console.log(command);
+
     if (textInput.toLocaleLowerCase().includes("change")) {
-      var changeIndex = textInput.indexOf("change")
+      var changeIndex = textInput.indexOf("change");
       var toIndex = textInput.indexOf("to", changeIndex);
       var param = textInput.substring(changeIndex + 7, toIndex - 1);
       var value = textInput.substring(toIndex + 3);
       if (param in legolas) {
         return change(param, value);
+      } else if (param === "change ") {
+        return alert(`Define a valid value and parameter to change.`);
       } else {
         return alert(`${param} is not a property of character.`);
       }
