@@ -111,7 +111,7 @@ function App() {
           value={textInput}
           onChange={(text) => setTextInput(text.target.value)}
         />
-        <input type="submit" value="OK" id="send" />
+        <input type="submit" value="Confirm" id="send" />
       </form>
     </div>
   );

@@ -88,6 +88,8 @@ img {
     border: 0 none;
     text-align: center;
     border-bottom: solid 2px black;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
     background-color: #fff5;
     font-size: 14pt;
 }
@@ -98,7 +100,14 @@ img {
 }
 
 #send {
-    width: 100%;
+    width: 100.2%;
     size: 24pt;
-    font-size: 24pt;
+    font-size: 12pt;
+    font-weight: bold;
+    padding-block: 10px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: 0 none;
+    color: #FFF;
+    background-color: black;
 }
