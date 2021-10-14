@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./App.css";
+import "./App.scss";
 import Character from "./components/Character";
 import legolas from "./json/legolas.json";
 
@@ -7,6 +7,7 @@ function App() {
   const [textInput, setTextInput] = useState("");
   const [action, setAction] = useState("");
   const [fulano, setFulano] = useState(new Character(legolas));
+  const date = new Date().getFullYear();
 
   function image() {
     if (fulano.type === "human") {
@@ -102,30 +103,55 @@ function App() {
 
   return (
     <div className="App" style={{ backgroundColor: backgroundColor() }}>
-      <h1 id="character_name">{fulano.name}</h1>
-      <h3 id="character_type">{fulano.type}</h3>
+      <div className="app-body">
+        <h1 id="character_name">{fulano.name}</h1>
+        <h3 id="character_type">{fulano.type}</h3>
 
-      <div className="image">
-        <img
-          src={image()}
-          id="imagem"
-          alt="Imagem do personagem"
-          loading="lazy"
-        />
+        <div className="image">
+          <img
+            src={image()}
+            id="imagem"
+            alt="Imagem do personagem"
+            loading="lazy"
+          />
+        </div>
+
+        <p id="action">{action}</p>
+
+        <form className="form" onSubmit={talk} action="#" autoComplete="on">
+          <input
+            type="text"
+            id="text"
+            placeholder="Call an action or say something..."
+            value={textInput}
+            onChange={(text) => setTextInput(text.target.value)}
+          />
+          <input type="submit" value="Confirm" id="send" />
+        </form>
       </div>
 
-      <p id="action">{action}</p>
-
-      <form className="form" onSubmit={talk} action="#" autoComplete="on">
-        <input
-          type="text"
-          id="text"
-          placeholder="Call an action or say something..."
-          value={textInput}
-          onChange={(text) => setTextInput(text.target.value)}
-        />
-        <input type="submit" value="Confirm" id="send" />
-      </form>
+      <footer className="footer">
+        <p>{`Gabriel Ramos • ${date}`}</p>
+        <p>|</p>
+        <p>
+          <a href="http://linkedin.com/in/gabrielocramos" target="_blank">
+            LinkedIn
+          </a>
+        </p>
+        <p>
+          <a href="http://instagram.com/eugaoliver" target="_blank">
+            Instagram
+          </a>
+        </p>
+        <p>
+          <a href="http://github.com/eugaoliver" target="_blank">
+            GitHub
+          </a>
+        </p>
+        <p>
+          <a href="mailto:gabriel.o.c.ramos@gmail.com">E-Mail</a>
+        </p>
+      </footer>
     </div>
   );
 }
