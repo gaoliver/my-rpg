@@ -41,6 +41,16 @@
     transition: ease-in-out 0.5s;
 }
 
+header {
+    display: flex;
+    background-color: black;
+    color: white;
+    justify-content: center;
+    h1 {
+        font-size: 18pt;
+    }
+}
+
 .app-body {
     display: flex;
     flex-direction: column;
@@ -119,7 +129,7 @@ img {
     cursor: pointer;
 }
 
-.footer {
+footer {
     display: flex;
     justify-content: center;
     background-color: black;

@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import "./App.scss";
 import Character from "./components/Character";
 import legolas from "./json/legolas.json";
+import Footer from "./components/Footer";
 
 function App() {
   const [textInput, setTextInput] = useState("");
   const [action, setAction] = useState("");
   const [fulano, setFulano] = useState(new Character(legolas));
-  const date = new Date().getFullYear();
 
   function image() {
     if (fulano.type === "human") {
@@ -103,6 +103,10 @@ function App() {
 
   return (
     <div className="App" style={{ backgroundColor: backgroundColor() }}>
+      <header>
+        <h1>My RPG - Character</h1>
+      </header>
+
       <div className="app-body">
         <h1 id="character_name">{fulano.name}</h1>
         <h3 id="character_type">{fulano.type}</h3>
@@ -130,28 +134,7 @@ function App() {
         </form>
       </div>
 
-      <footer className="footer">
-        <p>{`Gabriel Ramos • ${date}`}</p>
-        <p>|</p>
-        <p>
-          <a href="http://linkedin.com/in/gabrielocramos" target="_blank">
-            LinkedIn
-          </a>
-        </p>
-        <p>
-          <a href="http://instagram.com/eugaoliver" target="_blank">
-            Instagram
-          </a>
-        </p>
-        <p>
-          <a href="http://github.com/eugaoliver" target="_blank">
-            GitHub
-          </a>
-        </p>
-        <p>
-          <a href="mailto:gabriel.o.c.ramos@gmail.com">E-Mail</a>
-        </p>
-      </footer>
+      <Footer />
     </div>
   );
 }
