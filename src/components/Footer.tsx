@@ -20,7 +20,7 @@ function Footer() {
       </p>
       <p>•</p>
       <p>
-        <a href="http://github.com/eugaoliver" target="_blank">
+        <a href="http://github.com/gaoliver" target="_blank">
           GitHub
         </a>
       </p>
